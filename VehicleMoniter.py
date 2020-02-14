@@ -57,14 +57,6 @@ class vehicle:
             dely=((self.points[-1][1]-self.points[-2][1])*4+(self.points[-2][1]-self.points[-3][1])*3+(self.points[-3][1]-self.points[-4][1])*2+(self.points[-4][1]-self.points[-5][1]))/10
             self.next=[int(self.points[-1][0]+delx),int(self.points[-1][1]+dely)]
 
-
-    def updatePosition(self,recto):
-        self.rect=recto
-        x=int((2*self.rect[0]+self.rect[2])/2)
-        y=int((2*self.rect[1]+self.rect[3])/2)
-        self.points.append((x,y))
-        self.diagonal=(self.rect[2]**2+self.rect[3]**2)**0.5
-
     def increaseFrameNotFound(self):
         self.framesNotFound+=1
         if(self.framesNotFound>5):
@@ -339,7 +331,7 @@ imgF=Image.fromarray(imgF)
 im_width, im_height = imgF.size
 xl1=0
 xl2=im_width-1
-yl1=im_height*0.5
+yl1=im_height*0.5		# green
 yl2=yl1
 ml1=(yl2-yl1)/(xl2-xl1)
 intcptl1=yl1-ml1*xl1
@@ -347,14 +339,14 @@ intcptl1=yl1-ml1*xl1
 count=0
 xl3=0
 xl4=im_width-1
-yl3=im_height*0.25
+yl3=im_height*0.25		# red
 yl4=yl3
 ml2=(yl4-yl3)/(xl4-xl3)
 intcptl2=yl3-ml2*xl3
 
 xl5=0
 xl6=im_width-1
-yl5=im_height*0.1
+yl5=im_height*0.1		# blue
 yl6=yl5
 ml3=(yl6-yl5)/(xl6-xl5)
 intcptl3=yl5-ml3*xl5
@@ -372,7 +364,7 @@ detection_classes = detection_graph.get_tensor_by_name('detection_classes:0')
 num_detections = detection_graph.get_tensor_by_name('num_detections:0')
 
 window = tk.Tk()  #Makes main window
-window.wm_title("T.M.S")
+window.wm_title("Victor")
 window.columnconfigure(0, {'minsize': 1020})
 window.columnconfigure(1, {'minsize': 335})
 
