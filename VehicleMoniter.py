@@ -9,7 +9,7 @@ import time
 from imutils.video import WebcamVideoStream
 from imutils.video import FPS
 import imutils
-from vehicle import vehicle
+import vehicle
 import PIL.Image as Image
 from collections import defaultdict
 from io import StringIO
@@ -55,7 +55,7 @@ NUM_CLASSES = 1
 
 
 api = openalpr_api.DefaultApi()
-secret_key = ''
+secret_key = 'sk_e311bfa7e4e74b3828e67ea7'
 country = 'us'
 recognize_vehicle = 0
 state = ''

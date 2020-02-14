@@ -1,6 +1,4 @@
 class vehicle:
-
-
     def updatePosition(self,recto):
         self.rect=recto
         x=int((2*self.rect[0]+self.rect[2])/2)
