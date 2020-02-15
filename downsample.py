@@ -1,5 +1,8 @@
 import cv2
+
 import numpy as np
+
+
 
 capture = cv2.VideoCapture('Set01_video01.mp4')
 size = (
