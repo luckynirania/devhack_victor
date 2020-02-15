@@ -27,7 +27,7 @@ Make account on openalpr and get api secret key from [OpenALPR](https://www.open
 
 ## Installing
 
-Clone the repo and paste your secret key in [VehicleMoniter.py](https://github.com/luckynirania/devhack_victor/VehicleMoniter.py) file on line 144.
+Clone the repo and paste your secret key in [VehicleMoniter.py](https://github.com/luckynirania/devhack_victor/blob/master/VehicleMoniter.py) file on line 144.
 run the project by the command ```python3 VehicleMoniter.py```
 
 ## Built With
