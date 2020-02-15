@@ -17,6 +17,7 @@ Python packages to be installed
 * imutils
 * Pillow
 * numpy
+* scipy
 * tkinter
 * urllib
 * openALPR api
