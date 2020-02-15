@@ -140,7 +140,7 @@ NUM_CLASSES = 1
 
 
 api = openalpr_api.DefaultApi()
-secret_key = 'sk_24d9ff7f80fa3f65595e0a37'
+secret_key = 'sk_34a2235e28312af139881c09'
 # secret_key=''
 country = 'us'
 recognize_vehicle = 0
@@ -162,6 +162,9 @@ def getLicensePlateNumber(filer):
         X2 = js['results'][0]['coordinates'][2]['x']
         Y2 = js['results'][0]['coordinates'][2]['y']
         text_plate_no = js['results'][0]['plate']
+        print(text_plate_no)
+        print(type(text_plate_no))
+        print("printed plate number\n\n")
         img = cv2.imread(filer)
         rimg = img[Y1:Y2, X1:X2]
         frame3 = rimg
@@ -172,7 +175,7 @@ def getLicensePlateNumber(filer):
         cv2image3 = cv2.cvtColor(frame3, cv2.COLOR_BGR2RGBA)
         img3 = Image.fromarray(cv2image3)
         imgtk3 = ImageTk.PhotoImage(image=img3)
-        name_temp = 'LP/'+str(text_plate_no)+str('_')+str(filer)+'.jpg'
+        name_temp = 'LP/Victor_'+str(text_plate_no)+'.jpg'
         cv2.imwrite(name_temp, rimg)
         display4.imgtk = imgtk3  # Shows frame for display 1
         display4.configure(image=imgtk3)
@@ -243,6 +246,7 @@ def matchVehicles(currentFrameVehicles, im_width, im_height, image):
             if vehicles[i].getCurrentFrameMatch() == False:
                 vehicles[i].increaseFrameNotFound()
 
+
     # print(len(vehicles))
 pool = ThreadPool(processes=1)
 
@@ -269,7 +273,7 @@ def checkRedLightCrossed(img):
                 display2.imgtk = imgtk2  # Shows frame for display 1
                 display2.configure(image=imgtk2)
                 # cv2.imshow('BROKE',bimg)
-                name = 'Rule Breakers/culprit'+str(time.time())+'.jpg'
+                name = 'Rule Breakers/Victor'+str(time.time())+'.jpg'
                 cv2.imwrite(name, bimg)
 
                 tstop = threading.Event()
@@ -384,24 +388,24 @@ num_detections = detection_graph.get_tensor_by_name('num_detections:0')
 
 window = tk.Tk()  # Makes main window
 window.wm_title("Victor")
-window.columnconfigure(0, {'minsize': 1020})
-window.columnconfigure(1, {'minsize': 335})
+window.columnconfigure(1, {'minsize': 1020})
+window.columnconfigure(0, {'minsize': 335})
 
 
 frame = tk.Frame(window)
-frame.grid(row=0, column=0, rowspan=5, sticky='N', pady=10)
+frame.grid(row=0, column=1, rowspan=5, sticky='N', pady=10)
 
 frame2 = tk.Frame(window)
-frame2.grid(row=0, column=1)
+frame2.grid(row=0, column=0)
 
 frame3 = tk.Frame(window)
-frame3.grid(row=1, column=1)
+frame3.grid(row=1, column=0)
 
 frame4 = tk.Frame(window)
-frame4.grid(row=2, column=1)
+frame4.grid(row=2, column=0)
 
 frame5 = tk.Frame(window)
-frame5.grid(row=3, column=1)
+frame5.grid(row=3, column=0)
 
 frame2.rowconfigure(1, {'minsize': 250})
 frame3.rowconfigure(1, {'minsize': 80})
