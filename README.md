@@ -35,3 +35,5 @@ run the project by the command ```python3 VehicleMoniter.py```
 * [Tensorflow](https://www.tensorflow.org/) - ML library
 * [OpenALPR](https://www.openalpr.com/) - For detecting license plate and extracting license plate number
 
+## Screenshots
+we gave added screenshots in "Screenshots" folder
