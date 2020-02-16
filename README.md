@@ -27,8 +27,14 @@ Make account on openalpr and get api secret key from [OpenALPR](https://www.open
 
 ## Installing
 
-Clone the repo and paste your secret key in [VehicleMoniter.py](https://github.com/luckynirania/devhack_victor/blob/master/VehicleMoniter.py) file on line 144.
+Clone the repo
+Create and accont on https://cloud.openalpr.com/account/register
+Paste your secret key in [VehicleMoniter.py](https://github.com/luckynirania/devhack_victor/blob/master/VehicleMoniter.py) file on line 144.
+Initiate virtual environment
+Install api ```python3 openalpr/setup.py install```
+Install pip packages ```pip3 install -r requirements.txt```
 run the project by the command ```python3 VehicleMoniter.py```
+You can edit the video name at line 348 of [VehicleMonitor.py]
 
 ## Built With
 
