@@ -7,6 +7,11 @@ It uses tensorflow with an ssd object detection model to detect cars and from th
 
 The project is made by using tensorflow so you must be familiar with tensorflow and basic object detection and you must also know basic maths for understanding the tracking algorithm. You must be also familiar with linux OS as We have made this on Ubuntu and didn't test on other platforms.
 
+### Demo
+
+https://youtu.be/HuwTrCYU_Ek
+
+
 ### Prerequisites
 
 Python packages to be installed
